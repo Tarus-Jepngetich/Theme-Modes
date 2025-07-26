@@ -1,0 +1,117 @@
+/* Root variables for theming */
+
+
+:root {
+  --base-color:white;
+  --base-variant: rgb(255, 255, 255);
+  --text-color: #4b4b4b; 
+  --secondary-text: rgb(0, 0, 0);
+  --primary-color: rgb(111, 111, 148);
+  --accent-color: #0071ff;
+  --bold-color:red;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.html {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--base-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.content-box {
+  background-color: var(--base-variant);
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  word-wrap: break-word;
+}
+
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: white;
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* space between buttons */
+  margin-top: 1.5rem;
+}
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:not(.cta-button) {
+  background-color: var(--primary-color);
+  color: white;
+}
+b {
+  color: var(--bold-color); 
+  font-weight:600;
+}
+
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-switch img {
+    fill: var(--primary-color);
+}
+
+#theme-switch img:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch img:first-child{
+    display: none;
+}
+
+.darkmode #theme-switch img:last-child{
+    display: block;
+}
+
+/* Dark mode overrides */
+.darkmode {
+  --base-color: #121212;
+  --base-variant: #2b2b2b;
+  --text-color: #e0e0e0;
+  --secondary-text: #cccccc;
+  --primary-color: #66aaff;
+  --accent-color: #3399ff;
+}
